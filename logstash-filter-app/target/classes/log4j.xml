@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration debug="false">
+
+	<appender name="default.console" class="org.apache.log4j.ConsoleAppender">
+		<param name="target" value="System.out" />
+
+		<param name="threshold" value="debug" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="default.file" class="org.apache.log4j.FileAppender">
+		<param name="file" value="C:/TEMP/VIKHLIAYEU/logs/logstash-filter-app/logstash-filter-app.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="utf-8" />
+		<param name="threshold" value="debug" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="default.file" additivity="false">
+		<level value="all" />
+	</logger>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="default.console" />
+		<appender-ref ref="default.file" />
+	</root>
+
+</log4j:configuration>

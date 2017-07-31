@@ -1,0 +1,18 @@
+###################### Filebeat Configuration #########################
+### Author:     Vikhliayeu Vitali
+### Task:       Logstash:Filters
+
+#=========================== Filebeat prospectors =============================
+filebeat.prospectors:
+
+- input_type: log
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - C:\TEMP\VIKHLIAYEU\logs\logstash-filter-app\*.log
+    
+  document_type: logstash_filter_task
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["localhost:5044"]
